@@ -1,6 +1,6 @@
 # Theatre api service
 
-Theatre api service is a web application that allows users to order a tickets to the theatre plays
+Theatre api service is a web application that allows users to order tickets to the theatre plays
 
 ## DB Structure 
 ![Website Interface](db_structure.png)

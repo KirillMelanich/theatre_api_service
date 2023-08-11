@@ -5,7 +5,7 @@ services:
     build:
       context: .
     image:
-      kirillmelanich/dockerize-cinema
+      kirillmelanich/docker-theatre
     ports:
       - "8000:8000"
     volumes:

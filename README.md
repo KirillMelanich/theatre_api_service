@@ -16,7 +16,7 @@ or create your own user using python manage.py createsuperuser
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/KirillMelanich/radio_station.git
+   git clone https://github.com/KirillMelanich/theatre_api_service.git
    
 2. Navigate to the project directory and activate virtual environment:
    ```shell

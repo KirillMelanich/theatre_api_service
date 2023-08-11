@@ -38,8 +38,8 @@ class Actor(models.Model):
 class Play(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    genres = models.ManyToManyField(Genre, blank=True)
-    actors = models.ManyToManyField(Actor, blank=True)
+    genres = models.ManyToManyField(Genre, blank=True, related_name="plays")
+    actors = models.ManyToManyField(Actor, blank=True, related_name="plays")
 
     class Meta:
         ordering = ["title"]
@@ -62,10 +62,7 @@ class Performance(models.Model):
 
 class Reservation(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE
-    )
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.created_at)
@@ -129,9 +126,7 @@ class Ticket(models.Model):
         )
 
     def __str__(self):
-        return f"{str(self.performance)}" \
-               f" (row: {self.row}," \
-               f" seat: {self.seat})"
+        return f"{str(self.performance)}" f" (row: {self.row}," f" seat: {self.seat})"
 
     class Meta:
         unique_together = ("performance", "row", "seat")

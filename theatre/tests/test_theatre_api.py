@@ -27,7 +27,9 @@ def sample_play(**params):
 
 
 def sample_performance(**params):
-    theatre_hall = TheatreHall.objects.create(name="Green Theatre", rows=30, seats_in_row=30)
+    theatre_hall = TheatreHall.objects.create(
+        name="Green Theatre", rows=30, seats_in_row=30
+    )
 
     defaults = {
         "show_time": "2023-09-02 19:30:00",
